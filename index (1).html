@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success Tutoring Epping - Personalised Maths &amp; English Tutoring for Primary &amp; High School</title>
+  <meta name="description" content="Personalised Maths and English tutoring for primary and high school students in Epping. Small groups, real tutors, proven results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #E25D25;
+      --orange-dark: #C84D1A;
+      --blue-light: #DAE5EC;
+      --cream: #FFFBF4;
+      --ink: #272525;
+      --muted: #4a4646;
+      --white: #ffffff;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    h1, h2, h3 {
+      font-family: "Poppins", "Inter", sans-serif;
+      line-height: 1.2;
+      margin: 0 0 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    section { padding: 64px 0; }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 40px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 14px 24px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.1s;
+      text-align: center;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--orange); color: var(--white); }
+    .btn-primary:hover { background: var(--orange-dark); }
+    .btn-outline { background: transparent; color: var(--white); border-color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--ink); }
+    .btn-white { background: var(--white); color: var(--orange); }
+    .btn-white:hover { background: var(--cream); }
+    .btn-small { font-size: 14px; padding: 8px 16px; border-radius: 8px; }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--white);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand img { height: 44px; width: auto; }
+    .brand-name { font-weight: 700; font-size: 15px; line-height: 1.1; }
+    .brand-sub { color: var(--orange); font-size: 12px; font-weight: 600; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background: url("images/hero-bg.jpg") center / cover no-repeat;
+      padding: 80px 0;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(20, 18, 18, 0.78) 0%, rgba(20, 18, 18, 0.55) 55%, rgba(20, 18, 18, 0.25) 100%);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-content { max-width: 620px; }
+    .badge {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 540px;
+      opacity: 0.92;
+      margin: 0 0 28px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* Director video */
+    .video-card {
+      max-width: 760px;
+      margin: 0 auto;
+      border: 4px solid var(--orange);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--ink);
+      aspect-ratio: 16 / 9;
+    }
+    .video-card iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .video-caption {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 16px;
+      font-size: 15px;
+    }
+
+    /* Cards */
+    .grid { display: grid; gap: 24px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+    .card .icon { font-size: 36px; line-height: 1; margin-bottom: 14px; }
+    .card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .bg-blue { background: var(--blue-light); }
+    .bg-white { background: var(--white); }
+    .bg-cream { background: var(--cream); }
+
+    .pain .card { text-align: left; }
+    .pain-footer {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 40px;
+    }
+
+    /* Split feature block */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .split img {
+      border-radius: var(--radius);
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    .feature-list { display: grid; gap: 20px; }
+    .feature { display: flex; gap: 16px; align-items: flex-start; }
+    .feature-dot {
+      flex: 0 0 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .feature h3 { font-size: 18px; margin-bottom: 4px; }
+    .feature p { margin: 0; color: var(--muted); }
+
+    /* Testimonials */
+    .testimonial { display: flex; flex-direction: column; }
+    .testimonial .thumb {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      aspect-ratio: 4 / 5;
+    }
+    .testimonial .thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .testimonial .tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .testimonial blockquote {
+      margin: 0 0 16px;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--ink);
+      flex: 1;
+    }
+    .testimonial .name { font-weight: 700; margin: 0; }
+    .testimonial .role { margin: 0; color: var(--muted); font-size: 14px; }
+
+    /* Offer */
+    .offer {
+      background: var(--orange);
+      color: var(--white);
+      text-align: center;
+    }
+    .offer .section-title { color: var(--white); }
+    .offer p { max-width: 640px; margin: 0 auto 28px; font-size: 18px; opacity: 0.95; }
+
+    .cta { text-align: center; }
+    .cta p { color: var(--muted); font-size: 18px; max-width: 640px; margin: 0 auto 28px; }
+
+    /* FAQ */
+    .faq { max-width: 800px; margin: 0 auto; display: grid; gap: 12px; }
+    .faq details {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .faq summary {
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: -2px;
+      font-size: 24px;
+      color: var(--orange);
+      transition: transform 0.2s;
+    }
+    .faq details[open] summary::after { content: "–"; }
+    .faq details p { margin: 12px 0 0; color: var(--muted); }
+
+    /* Final CTA */
+    .final-cta { background: var(--white); }
+    .final-cta h2 { font-size: 36px; text-align: center; }
+
+    /* Footer */
+    .site-footer {
+      background: var(--ink);
+      color: #e9e6e6;
+      padding: 32px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .split { grid-template-columns: 1fr; gap: 32px; }
+      .split img { aspect-ratio: 16 / 10; }
+    }
+
+    @media (max-width: 640px) {
+      section { padding: 48px 0; }
+      .section-title { font-size: 28px; }
+      .hero { min-height: 480px; padding: 56px 0; }
+      .hero h1 { font-size: 34px; }
+      .hero p { font-size: 16px; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .brand-name { font-size: 14px; }
+      .site-header .btn { padding: 8px 12px; font-size: 13px; }
+      .btn { width: 100%; }
+      .hero-actions .btn, .cta .btn { width: 100%; }
+      .final-cta h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top">
+        <img src="images/logo.png" alt="Success Tutoring">
+        <span>
+          <span class="brand-name">Success Tutoring</span><br>
+          <span class="brand-sub">Epping</span>
+        </span>
+      </a>
+      <a class="btn btn-primary btn-small" href="#book">Book Free Assessment</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero" aria-label="Introduction">
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge">🎉 First Session FREE until Feb 28</span>
+          <h1>Boost Your Child's Confidence &amp; Results</h1>
+          <p>Personalised Maths &amp; English tutoring for primary and high school students in Epping. Small groups, real tutors, proven results.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#book">Book Free Assessment</a>
+            <a class="btn btn-outline" href="#callback">Call Me Back</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Center Director -->
+    <section class="bg-white" id="director">
+      <div class="container">
+        <h2 class="section-title">Meet Our Center Director</h2>
+        <p class="section-intro">Hear directly from our Center Director about our approach to personalised learning and how we help students succeed.</p>
+        <div class="video-card">
+          <iframe src="https://killerplayer.com/watch/video/ca7416de-11b7-4206-9222-b8eefb598f40" title="Meet our Center Director" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pain points -->
+    <section class="bg-blue pain">
+      <div class="container">
+        <h2 class="section-title">Does This Sound Familiar?</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="icon">😟</div>
+            <h3>Homework Stress</h3>
+            <p>Nightly battles over homework, constant frustration, and feeling like you're re-teaching everything.</p>
+          </div>
+          <div class="card">
+            <div class="icon">📉</div>
+            <h3>Falling Behind</h3>
+            <p>Your child is struggling in class, gaps are widening, and you're not sure how to help.</p>
+          </div>
+          <div class="card">
+            <div class="icon">😰</div>
+            <h3>Confidence Crisis</h3>
+            <p>Your child has lost confidence in their abilities and dreads going to school.</p>
+          </div>
+          <div class="card">
+            <div class="icon">⏰</div>
+            <h3>No Time</h3>
+            <p>You're busy, your child is busy, and finding quality tutoring feels impossible.</p>
+          </div>
+          <div class="card">
+            <div class="icon">💔</div>
+            <h3>Generic Approach</h3>
+            <p>Large classes and one-size-fits-all programs don't work for your child's unique needs.</p>
+          </div>
+          <div class="card">
+            <div class="icon">❓</div>
+            <h3>Uncertainty</h3>
+            <p>You don't know if tutoring will actually help or if you're wasting money.</p>
+          </div>
+        </div>
+        <p class="pain-footer">You're not alone. Most parents feel this way. The good news? There's a solution.</p>
+      </div>
+    </section>
+
+    <!-- How we help -->
+    <section class="bg-white">
+      <div class="container">
+        <div class="split">
+          <img src="images/tutor-with-students.jpg" alt="Tutor with students" loading="lazy">
+          <div>
+            <h2 class="section-title" style="text-align:left">How Success Tutoring Helps</h2>
+            <p style="color:var(--muted);font-size:18px;margin-top:0">We've helped hundreds of students in Epping build confidence, improve results, and fall in love with learning again.</p>
+            <div class="feature-list">
+              <div class="feature">
+                <div class="feature-dot">1</div>
+                <div>
+                  <h3>Small Groups (Max 6 Students)</h3>
+                  <p>Personalised attention in a supportive group environment. Your child gets the focus they need without feeling singled out.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-dot">2</div>
+                <div>
+                  <h3>Expert Tutors Who Care</h3>
+                  <p>Real educators who are trained to inspire, not just teach. They build relationships and adapt to each student's learning style.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-dot">3</div>
+                <div>
+                  <h3>Proven, Personalised Approach</h3>
+                  <p>Free assessment to identify gaps, then a tailored learning plan based on the Australian curriculum.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-dot">4</div>
+                <div>
+                  <h3>Clear Progress Tracking</h3>
+                  <p>Regular updates so you know exactly how your child is progressing. No surprises, just consistent improvement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="bg-cream">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="grid grid-4">
+          <div class="card">
+            <div class="icon">🔢</div>
+            <h3>Maths Tutoring</h3>
+            <p>Build confidence in numeracy, problem-solving, and exam preparation. From primary arithmetic to high school algebra and beyond.</p>
+          </div>
+          <div class="card">
+            <div class="icon">📚</div>
+            <h3>English Tutoring</h3>
+            <p>Improve reading comprehension, writing skills, and communication. Prepare for exams and develop a love for literature.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🌟</div>
+            <h3>Primary School Support</h3>
+            <p>Foundation building for K-6 students. Focus on literacy, numeracy, and confidence in a fun, engaging environment.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🎯</div>
+            <h3>High School Preparation</h3>
+            <p>Targeted support for Years 7-11. Subject-specific tutoring and exam preparation to help students excel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-white">
+      <div class="container">
+        <h2 class="section-title">What Parents &amp; Students Say</h2>
+        <div class="grid grid-4">
+          <figure class="card testimonial" style="margin:0">
+            <div class="thumb">
+              <img src="images/tutor-helping-students.jpg" alt="Tutor helping students" loading="lazy">
+              <span class="tag">Video Testimonial</span>
+            </div>
+            <blockquote>"My daughter went from dreading maths to actually enjoying it. The tutors are amazing and she's made real progress in just 8 weeks."</blockquote>
+            <p class="name">Sarah M.</p>
+            <p class="role">Parent of Year 5 Student</p>
+          </figure>
+          <figure class="card testimonial" style="margin:0">
+            <div class="thumb">
+              <img src="images/students-with-certificate.jpg" alt="Students with certificate" loading="lazy">
+              <span class="tag">Video Testimonial</span>
+            </div>
+            <blockquote>"Less homework stress at home, better grades at school. Best decision we made. The personalised approach really works."</blockquote>
+            <p class="name">James L.</p>
+            <p class="role">Parent of Year 9 Student</p>
+          </figure>
+          <figure class="card testimonial" style="margin:0">
+            <div class="thumb">
+              <img src="images/center-director-student.jpg" alt="Center director with student" loading="lazy">
+              <span class="tag">Video Testimonial</span>
+            </div>
+            <blockquote>"I used to hate English, but my tutor makes it fun. I actually understand what we're learning now!"</blockquote>
+            <p class="name">Emma T.</p>
+            <p class="role">Year 7 Student</p>
+          </figure>
+          <figure class="card testimonial" style="margin:0">
+            <div class="thumb">
+              <img src="images/tutor-with-students.jpg" alt="Tutor with students" loading="lazy">
+              <span class="tag">Video Testimonial</span>
+            </div>
+            <blockquote>"Fantastic support leading up to exams. My son's confidence is through the roof and his marks have improved significantly."</blockquote>
+            <p class="name">Michael P.</p>
+            <p class="role">Parent of Year 11 Student</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special offer -->
+    <section class="offer">
+      <div class="container">
+        <h2 class="section-title">Special Offer: First Session FREE</h2>
+        <p>Limited time only until February 28th. Book your child's free assessment today and start your tutoring journey with no commitment.</p>
+        <a class="btn btn-white" href="#book">Claim Your Free Session</a>
+      </div>
+    </section>
+
+    <!-- Ready to get started -->
+    <section class="bg-white cta" id="book">
+      <div class="container">
+        <h2 class="section-title">Ready to Get Started?</h2>
+        <p>Book your free assessment now and discover your child's true potential.</p>
+        <a class="btn btn-primary" href="#book">Book Free Assessment</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-blue" id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+          <details>
+            <summary>What makes Success Tutoring different?</summary>
+            <p>We focus on small groups (max 6 students), real tutors who care, and personalised learning plans based on each student's needs. We're not a one-size-fits-all service.</p>
+          </details>
+          <details>
+            <summary>How long does it take to see results?</summary>
+            <p>Most parents notice improved confidence within 4-6 weeks. Academic improvements typically follow as confidence builds. We track progress regularly.</p>
+          </details>
+          <details>
+            <summary>Do you offer online tutoring?</summary>
+            <p>Yes! We offer both in-person sessions in Epping and online tutoring for flexibility. Choose what works best for your family.</p>
+          </details>
+          <details>
+            <summary>What if my child doesn't like their tutor?</summary>
+            <p>We want the best fit for your child. If there's any concern, we'll work with you to find a better match. Your satisfaction is our priority.</p>
+          </details>
+          <details>
+            <summary>Are there long-term contracts?</summary>
+            <p>No lock-in contracts. You can adjust or pause your tutoring anytime. We believe in earning your trust week by week.</p>
+          </details>
+          <details>
+            <summary>What subjects do you teach?</summary>
+            <p>We specialise in Maths and English for primary and high school students. These are the foundation subjects that impact overall academic success.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta cta">
+      <div class="container">
+        <h2>Ready to Transform Your Child's Learning?</h2>
+        <p>Start with a free assessment. No commitment. No pressure. Just expert guidance to help your child succeed.</p>
+        <a class="btn btn-primary" href="#book">Book Your Free Assessment Today</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Success Tutoring Epping. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
